@@ -2,13 +2,10 @@ package com.example.todolist.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
-import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.Root;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -16,13 +13,13 @@ import org.springframework.data.domain.Pageable;
 
 import com.example.todolist.common.Utils;
 import com.example.todolist.entity.Todo;
-import com.example.todolist.entity.Todo_;
 import com.example.todolist.form.TodoQuery;
+
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class TodoDaoImpl implements TodoDao {
-  private final EntityManager entityManager;
+  private final javax.persistence.EntityManager entityManager;
 
   // JPQLによる検索
   @Override
@@ -72,7 +69,7 @@ public class TodoDaoImpl implements TodoDao {
     // order
     sb.append(" order by id");
 
-    Query query = entityManager.createQuery(sb.toString());
+    javax.persistence.TypedQuery query = entityManager.createQuery(sb.toString());
     for (int i = 0; i < params.size(); ++i) {
       query = query.setParameter(i + 1, params.get(i));
     }

@@ -23,8 +23,6 @@ import com.example.todolist.entity.Todo;
 import com.example.todolist.repository.TodoRepository;
 import com.example.todolist.service.TodoService;
 
-import jakarta.servlet.http.HttpSession;
-
 public class TodoListControllerTest {
 
     private MockMvc mockMvc;
@@ -36,7 +34,7 @@ public class TodoListControllerTest {
     private TodoService todoService;
     
     @Mock
-    private HttpSession session;
+    private javax.servlet.http.HttpSession session;
 
     @InjectMocks
     private TodoListController todoListController;

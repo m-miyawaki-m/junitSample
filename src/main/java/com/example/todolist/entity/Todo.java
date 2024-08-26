@@ -1,35 +1,30 @@
 package com.example.todolist.entity;
 
 import java.sql.Date;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 import lombok.Data;
 
-@Entity
-@Table(name = "todo")
+@javax.persistence.Entity
+@javax.persistence.Table(name = "todo")
 @Data
 public class Todo {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
+  @javax.persistence.Id
+  @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
+  @javax.persistence.Column(name = "id")
   private Integer id;
 
-  @Column(name = "title")
+  @javax.persistence.Column(name = "title")
   private String title;
 
-  @Column(name = "importance")
+  @javax.persistence.Column(name = "importance")
   private Integer importance;
 
-  @Column(name = "urgency")
+  @javax.persistence.Column(name = "urgency")
   private Integer urgency;
 
-  @Column(name = "deadline")
+  @javax.persistence.Column(name = "deadline")
   private Date deadline;
 
-  @Column(name = "done")
+  @javax.persistence.Column(name = "done")
   private String done;
 }

@@ -7,6 +7,8 @@ import static org.mockito.Mockito.*;
 import java.util.Collections;
 import java.util.List;
 
+import javax.persistence.criteria.CriteriaQuery;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -19,24 +21,19 @@ import org.springframework.data.domain.Pageable;
 import com.example.todolist.entity.Todo;
 import com.example.todolist.form.TodoQuery;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
-import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.CriteriaQuery;
-
 public class TodoDaoImplTest {
 
     @Mock
-    private EntityManager entityManager;
+    private javax.persistence.EntityManager entityManager;
 
     @InjectMocks
     private TodoDaoImpl todoDaoImpl;
 
     @Mock
-    private Query query;
+    private javax.persistence.TypedQuery query;
 
     @Mock
-    private TypedQuery<Todo> typedQuery;
+    private javax.persistence.TypedQuery<Todo> typedQuery;
 
     @Before
     public void setUp() {
