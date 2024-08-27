@@ -61,6 +61,17 @@
 		    <version>1.49</version>
 		    <scope>test</scope>
 		</dependency>
+	    <dependency>
+	        <groupId>com.oracle.stellent</groupId>
+	        <artifactId>ridc</artifactId>
+	        <version>11.1.1</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.mockito</groupId>
+	        <artifactId>mockito-core</artifactId>
+	        <!-- 最新の安定版を使用してください -->
+	        <scope>test</scope>
+	    </dependency>
 	</dependencies>
 
 	<build>

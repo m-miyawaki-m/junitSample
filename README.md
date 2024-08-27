@@ -1,3 +1,25 @@
+### Loggerの判定
+
+SLF4Jの実装(バージョン1.7.10で確認済み)は、次のようないくつかのメソッドで呼び出します。isDebugEnabled()
+
+public void debug(String format, Object... arguments) {
+    if(this.log.isDebugEnabled()) {
+        FormattingTuple ft = MessageFormatter.arrayFormat(format, arguments);
+        this.log.debug(ft.getMessage(), ft.getThrowable());
+    }
+}
+しかし、次のように、特定のlogginレベルが有効になっているかどうかを内部的にチェックしないメソッドオーバーロードもあります。
+
+public void debug(String msg, Throwable t) {
+    this.log.debug(msg, t);
+}
+もう一つは、ロガーの実装は変更できるため、ロガーがログレベルに従って呼び出されることを常に確認したい場合は、メソッドの使用を検討することをお勧めします。isDebugEnabled()
+
+https://stackoverflow.com/questions/17850614/is-log4j-isdebugenabled-necessary-before-using-logger-debug
+
+
+
+
 Springのサービスクラス `serviceClass` をJUnit4でテストするには、以下の手順で進めることができます。特にMockitoを使用して、`ServiceResouceFactory` のモックを作成し、依存性の注入を模倣する方法を説明します。
 
 ### 1. テストクラスの作成
