@@ -14,7 +14,7 @@ import java.lang.reflect.Field;
 
 import static org.mockito.Mockito.*;
 
-public class LogServiceTest {
+public class LogServiceTest2 {
 
     @Mock
     private Logger mockLogger;
