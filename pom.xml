@@ -17,6 +17,30 @@
 		<java.version>8</java.version>
 	</properties>
 	<dependencies>
+		    <!-- Jakarta Annotation API -->
+	    <dependency>
+	        <groupId>jakarta.annotation</groupId>
+	        <artifactId>jakarta.annotation-api</artifactId>
+	        <version>2.1.1</version>
+	    </dependency>
+	
+	    <!-- Jakarta Persistence API -->
+	    <dependency>
+	        <groupId>jakarta.persistence</groupId>
+	        <artifactId>jakarta.persistence-api</artifactId>
+	        <version>3.1.0</version>
+	    </dependency>
+	
+	    <!-- Jakarta Servlet API -->
+	    <dependency>
+	        <groupId>jakarta.servlet</groupId>
+	        <artifactId>jakarta.servlet-api</artifactId>
+	        <version>5.0.0</version>
+	        <scope>provided</scope>
+	    </dependency>
+			
+		
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -131,7 +155,7 @@
             <version>1.49</version>
             <scope>test</scope>
         </dependency>
-
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -148,10 +172,10 @@
 			</plugin>
 		</plugins>
 	</build>
-<repositories>
-    <repository>
-        <id>oracle-repo</id>
-        <url>https://maven.oracle.com</url>
-    </repository>
-</repositories>
+	<repositories>
+	    <repository>
+	        <id>oracle-repo</id>
+	        <url>https://maven.oracle.com</url>
+	    </repository>
+	</repositories>
 </project>
